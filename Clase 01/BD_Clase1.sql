@@ -1,3 +1,7 @@
+use master
+go
+drop database Clase1
+go
 Create Database Clase1
 go
 Use Clase1
@@ -18,6 +22,9 @@ Create Table Empleados(
     Telefono varchar(20) null, -- Acepta este formto: +54011154567989
     Sueldo money not null check (Sueldo >= 0)
 )
+go
+Alter Table Empleados
+Add Constraint chk_nacimiento check(Nacimiento < getdate())
 
 /*
     Comentario de
